@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, type JSX } from 'react';
 import { Button, Typography, Alert } from '@mui/material';
 import Papa from 'papaparse';
 import { db } from '../firebaseConfig';
@@ -11,7 +11,7 @@ interface CSVRow {
   price: string;
 }
 
-const UploadCSV: React.FC = () => {
+const UploadCSV = (): JSX.Element => {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 

@@ -2,17 +2,9 @@ import React from 'react';
 import { IconButton, Container, Typography, Box } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from 'react-router-dom';
-import CSVUploader from '../components/CSVUploader';
-import type { Product } from '../types/Product';
-
+import UploadCSV  from '../components/CSVUploader';
 const AddInventoryPage: React.FC = () => {
   const navigate = useNavigate();
-
-  // ✅ Dummy implementation for now — will later connect to Firebase
-  const handleDataParsed = (data: Product[]) => {
-    console.log("Parsed inventory data:", data);
-    // Later: send data to Firebase
-  };
 
   return (
     <>
@@ -40,7 +32,7 @@ const AddInventoryPage: React.FC = () => {
         </Typography>
 
         {/* ✅ Now passing required prop */}
-        <CSVUploader onDataParsed={handleDataParsed} />
+        <UploadCSV  />
       </Container>
     </>
   );
